@@ -1,0 +1,38 @@
+library: profiles.cql
+group:
+- type: Patient
+  population:
+  - expression: IncludePatient
+  stratifier:
+  - code: profile
+    expression: PatientProfile
+- type: Encounter
+  population:
+  - expression: AllEncounters
+  stratifier:
+  - code: profile
+    expression: Profile
+- type: Condition
+  population:
+  - expression: AllConditions
+  stratifier:
+  - code: profile
+    expression: Profile
+- type: Observation
+  population:
+  - expression: AllObservations
+  stratifier:
+  - code: profile
+    expression: Profile
+- type: MedicationStatement
+  population:
+  - expression: AllMedicationStatements
+  stratifier:
+  - code: profile
+    expression: Profile
+- type: MedicationAdministration
+  population:
+  - expression: AllMedicationAdministrations
+  stratifier:
+  - code: profile
+    expression: Profile
