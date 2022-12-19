@@ -11,6 +11,15 @@ The following measure will show the profiles used in the following resource type
 
 Before you start, you have to:
 
+## Checkout the Project
+
+This section assumes, that you have checked out the project and open a command line in its directory.
+
+```sh
+git clone https://github.com/alexanderkiel/cql-profiles.git
+cd cql-profiles
+```
+
 ## Install Blazectl
 
 [Blazectl](https://github.com/samply/blazectl) is a command line utility that can, among other things, evaluate a CQL measure against a Blaze server available via HTTP. You'll find the installation instructions for your platform in its [README](https://github.com/samply/blazectl). At least version 0.12.0 is required.
@@ -18,6 +27,8 @@ Before you start, you have to:
 ## Install jq
 
 Please have a look into the [Download section of jq](https://stedolan.github.io/jq/download/).
+
+## Evaluating the Measure
 
 After that, you should able to run the following command line:
 
@@ -50,6 +61,6 @@ The command should output the following CSV formatted data:
 "MedicationAdministration","null",9
 ```
 
-In that data you will see each profile used in each resource type listed in the measure.
+In that data you will see each profile with its absolute frequency used in each resource type listed in the measure. The special string `null` will be used for resources having no profile.
 
 You can find the measure in [profiles.yml](profiles.yml), a slimmed-down version of a real [Measure](http://www.hl7.org/fhir/measure.html) resource and the CQL library in [profiles.cql](profiles.cql). For more information, please read [Evaluate a CQL Measure using the Command Line and Blazectl](https://github.com/samply/blaze/blob/master/docs/cql-queries/blazectl.md) in the [Blaze](https://github.com/samply/blaze) documentation.
